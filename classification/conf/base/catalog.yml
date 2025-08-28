@@ -1,0 +1,43 @@
+# Data Catalog for CNN Classification Pipeline
+# Here you can define all your datasets by using simple YAML syntax.
+#
+# Documentation for this file format can be found in "The Data Catalog"
+# Link: https://docs.kedro.org/en/stable/data/data_catalog.html
+
+# Raw data (in memory)
+raw_train_data:
+  type: MemoryDataset
+
+raw_test_data:
+  type: MemoryDataset
+
+# Preprocessed data
+preprocessed_train_data:
+  type: kedro_datasets.pickle.PickleDataset
+  filepath: data/05_model_input/train_data.pkl
+
+preprocessed_test_data:
+  type: kedro_datasets.pickle.PickleDataset
+  filepath: data/05_model_input/test_data.pkl
+
+# PyTorch Model
+trained_model:
+  type: kedro_datasets.pickle.PickleDataset
+  filepath: data/06_models/cnn_model.pkl
+
+# Training metrics
+training_metrics:
+  type: kedro_datasets.json.JSONDataset
+  filepath: data/08_reporting/training_metrics.json
+
+
+
+# Predictions
+predictions:
+  type: kedro_datasets.pickle.PickleDataset
+  filepath: data/07_model_output/predictions.pkl
+
+# Evaluation report
+evaluation_report:
+  type: kedro_datasets.json.JSONDataset
+  filepath: data/08_reporting/evaluation_report.json

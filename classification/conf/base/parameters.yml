@@ -1,0 +1,96 @@
+# Parameters for CNN Classification Pipeline
+
+# Data path configuration
+data_path: "data"
+
+# Data processing parameters
+data_processing:
+  image_size: [256, 256] #[224, 224]
+  batch_size: 32
+  validation_split: 0.2
+  num_workers: 0  # Set to 0 to avoid shared memory issues
+
+# Model architecture parameters
+model:
+  input_channels: 3
+  num_classes: 2
+  learning_rate: 0.001
+  epochs: 2
+  device: 'cuda'  # 'cuda' or 'cpu'
+  
+  # CNN layer configuration
+  conv_layers:
+    - out_channels: 32
+      kernel_size: 3
+      stride: 1
+      padding: 1
+    - out_channels: 64
+      kernel_size: 3
+      stride: 1
+      padding: 1
+    - out_channels: 128
+      kernel_size: 3
+      stride: 1
+      padding: 1
+  
+  # Fully connected layer sizes
+  fc_layers:
+    - 512
+    - 256
+  
+  # Regularization parameters
+  dropout_rate: 0.5           # Dropout probability for FC layers
+  batch_norm: true            # Use BatchNorm in CNN layers
+  weight_decay: 0.0001        # L2 regularization
+  
+  # Model initialization
+  init_method: 'kaiming'      # 'kaiming', 'xavier', 'normal'
+  init_gain: 1.0              # Initialization gain
+  
+  # Pooling configurations
+  pooling:
+    max_pool:
+      kernel_size: 2
+      stride: 2
+      padding: 0
+    adaptive_pool:
+      output_size: [7, 7]       # (height, width) for AdaptiveAvgPool2d
+
+# Training parameters
+training:
+  optimizer: 'adam'           # 'adam', 'sgd', 'rmsprop', 'adamw'
+  loss_function: 'cross_entropy'
+  
+  # Optimizer specific parameters
+  adam:
+    beta1: 0.9
+    beta2: 0.999
+    eps: 1e-8
+  sgd:
+    momentum: 0.9
+    nesterov: true
+  
+  # Learning rate scheduler
+  scheduler: 'step'           # 'step', 'cosine', 'plateau', 'exponential'
+  step_size: 20               # For StepLR
+  gamma: 0.1                  # LR decay factor
+  patience: 10                # For ReduceLROnPlateau
+  min_lr: 1e-6                # Minimum learning rate
+  
+  # Training behavior
+  early_stopping:
+    enabled: true
+    patience: 15
+    min_delta: 0.001
+  
+  # Gradient clipping
+  grad_clip:
+    enabled: false
+    max_norm: 1.0
+  
+  # Mixed precision training
+  mixed_precision: false      # Use automatic mixed precision
+
+# Inference parameters
+inference:
+  threshold: 0.5
