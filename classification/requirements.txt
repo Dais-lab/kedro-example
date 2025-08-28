@@ -1,0 +1,29 @@
+# Essential packages for CNN Classification Kedro Pipeline
+# Based on current working environment
+
+# Kedro framework
+kedro==1.0.0
+kedro-datasets==8.1.0
+
+# PyTorch ecosystem (current CUDA version)
+torch==2.5.1+cu124
+torchvision==0.20.1+cu124
+
+# Data science essentials
+numpy>=2.1.0
+pandas==2.3.2
+scikit-learn==1.7.1
+
+# Image processing
+pillow==10.2.0
+
+# Visualization
+matplotlib==3.10.5
+seaborn==0.13.2
+
+# Development environment
+jupyterlab==4.4.6
+notebook==7.4.5
+
+# Testing
+pytest==8.4.1
