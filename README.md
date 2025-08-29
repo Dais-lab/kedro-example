@@ -374,6 +374,8 @@ def create_pipeline(**kwargs) -> Pipeline:
 
 이 프로젝트는 MIT 라이선스 하에 배포됩니다. 자세한 내용은 [LICENSE](LICENSE) 파일을 참조하세요.
 
-## 또한, 이 프로젝트는 Apache License 2.0을 따르는 [Kedro](https://github.com/kedro-org/kedro) 프레임워크를 기반으로 만들어졌습니다.
+또한, 이 프로젝트는 Apache License 2.0을 따르는 [Kedro](https://github.com/kedro-org/kedro) 프레임워크를 기반으로 만들어졌습니다.
+
+---
 
 **🎉 Happy Learning with Kedro! 🎉**
