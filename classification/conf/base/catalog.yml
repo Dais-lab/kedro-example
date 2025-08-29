@@ -30,8 +30,6 @@ training_metrics:
   type: kedro_datasets.json.JSONDataset
   filepath: data/08_reporting/training_metrics.json
 
-
-
 # Predictions
 predictions:
   type: kedro_datasets.pickle.PickleDataset

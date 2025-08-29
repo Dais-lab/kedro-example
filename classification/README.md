@@ -59,7 +59,9 @@ kedro run
 
 ## 🎉 완료!
 
-이제 Kedro의 기본 사용법을 익혔습니다. 자세한 내용은 [README.md](README.md)를 참조하세요.
+이제 Kedro의 기본 사용법을 익혔습니다. 자세한 내용은 [README.md](../README.md)를 참조하세요.
+
+---
 
 # classification
 
