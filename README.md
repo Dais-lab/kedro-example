@@ -12,7 +12,6 @@
 
 - [프로젝트 개요](#-프로젝트-개요)
 - [주요 특징](#-주요-특징)
-- [파이프라인 구조](#-파이프라인-구조)
 - [설치 및 설정](#-설치-및-설정)
 - [사용법](#-사용법)
 - [데이터 구조](#-데이터-구조)
@@ -21,8 +20,6 @@
 - [설정 파일](#-설정-파일)
 - [결과 해석](#-결과-해석)
 - [Kedro 핵심 개념](#-kedro-핵심-개념)
-- [문제 해결](#-문제-해결)
-- [기여 방법](#-기여-방법)
 
 ## 프로젝트 개요
 
@@ -374,6 +371,8 @@ def create_pipeline(**kwargs) -> Pipeline:
 
 이 프로젝트는 MIT 라이선스 하에 배포됩니다. 자세한 내용은 [LICENSE](LICENSE) 파일을 참조하세요.
 
-## 또한, 이 프로젝트는 Apache License 2.0을 따르는 [Kedro](https://github.com/kedro-org/kedro) 프레임워크를 기반으로 만들어졌습니다.
+또한, 이 프로젝트는 Apache License 2.0을 따르는 [Kedro](https://github.com/kedro-org/kedro) 프레임워크를 기반으로 만들어졌습니다.
+
+---
 
 **🎉 Happy Learning with Kedro! 🎉**
